@@ -1,24 +1,22 @@
 import { Component, CUSTOM_ELEMENTS_SCHEMA, ChangeDetectionStrategy, ElementRef, viewChild } from '@angular/core';
-// import { injectBeforeRender } from 'angular-three';
-// import { Mesh } from 'three';
-import { CubeComponent } from '../cube/cube.component';
+import { injectStore, extend, NgtArgs } from 'angular-three';
+import { OrbitControls } from 'three-stdlib';
+import { CubeComponent } from '../../shared/elements/cube/cube.component';
+
+extend({ OrbitControls }); // makes ngt-orbit-controls available
 
 @Component({
   selector: 'app-scene-graph',
-  imports: [CubeComponent],
+  imports: [CubeComponent, NgtArgs],
   templateUrl: './scene-graph.component.html',
   styleUrl: './scene-graph.component.css',
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class SceneGraphComponent {
-  // meshRef = viewChild.required<ElementRef<Mesh>>('mesh'); 
+  protected readonly Math = Math;
 
-  // constructor() {
-  //   injectBeforeRender(() => {
-  //     const mesh = this.meshRef().nativeElement;
-  //     mesh.rotation.x += 0.01;
-  //     mesh.rotation.y += 0.01;
-  //   });
-  // }
+  private store = injectStore();
+  protected camera = this.store.select('camera');
+  protected glDomElement = this.store.select('gl', 'domElement');
 }

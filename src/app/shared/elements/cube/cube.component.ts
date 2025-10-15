@@ -1,5 +1,5 @@
-import { Component, CUSTOM_ELEMENTS_SCHEMA, ElementRef, viewChild, signal } from '@angular/core';
-import { injectBeforeRender } from 'angular-three';
+import { Component, CUSTOM_ELEMENTS_SCHEMA, ElementRef, viewChild, signal, input } from '@angular/core';
+import { injectBeforeRender, NgtVector3 } from 'angular-three';
 import { Mesh } from 'three';
 
 @Component({
@@ -10,6 +10,8 @@ import { Mesh } from 'three';
   schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
 export class CubeComponent {
+  position = input<NgtVector3>([0, 0, 0]);
+
   meshRef = viewChild.required<ElementRef<Mesh>>('mesh');
   hovered = signal(false);
   clicked = signal(false);
