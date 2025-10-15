@@ -1,4 +1,11 @@
-<div class="my-2 p-3">
-  <app-sidebar></app-sidebar>
-  <ngt-canvas [sceneGraph]="sceneGraph" />
+<div class="my-2 p-3 h-100">
+  <div class="mb-2">
+    <app-sidebar></app-sidebar>
+  </div>
+  <div class="bg-body-secondary h-75 border border-success">
+    <ngt-canvas 
+      [sceneGraph]="sceneGraph" 
+      [shadows]="true"    
+      />
+  </div>
 </div>
