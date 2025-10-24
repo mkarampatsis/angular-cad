@@ -1,0 +1,30 @@
+import { inject, Injectable } from '@angular/core';
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
+
+import { DistLoadsModalComponent } from '../modals/dist-loads-modal/dist-loads-modal.component';
+import { ElementsModalComponent } from '../modals/elements-modal/elements-modal.component';
+import { MaterialsModalComponent } from '../modals/materials-modal/materials-modal.component';
+import { ModelModalComponent } from '../modals/model-modal/model-modal.component';
+import { NodeModalComponent } from '../modals/node-modal/node-modal.component';
+import { PointLoadsModalComponent } from '../modals/point-loads-modal/point-loads-modal.component';
+import { ResultsModalComponent } from '../modals/results-modal/results-modal.component';
+import { SectionsModalComponent } from '../modals/sections-modal/sections-modal.component';
+import { SettingsModalComponent } from '../modals/settings-modal/settings-modal.component';
+import { SupportsModalComponent } from '../modals/supports-modal/supports-modal.component';
+
+@Injectable({
+  providedIn: 'root'
+})
+export class ModalService {
+  modalOpen = inject(NgbModal);
+
+  showDistLoadsDetails(data: string) {
+    const modalRef = this.modalOpen.open(DistLoadsModalComponent, {
+      fullscreen: 'lg',
+      size: 'xl',
+      centered: true,
+    });
+    modalRef.componentInstance.data = data;
+    modalRef.componentInstance.modalRef = modalRef;
+  }
+}
