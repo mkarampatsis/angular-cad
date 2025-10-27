@@ -18,8 +18,98 @@ import { SupportsModalComponent } from '../modals/supports-modal/supports-modal.
 export class ModalService {
   modalOpen = inject(NgbModal);
 
+  showModelDetails(data: string) {
+    const modalRef = this.modalOpen.open(ModelModalComponent, {
+      fullscreen: 'lg',
+      size: 'xl',
+      centered: true,
+    });
+    modalRef.componentInstance.data = data;
+    modalRef.componentInstance.modalRef = modalRef;
+  }
+
+  showNodesDetails(data: string) {
+    const modalRef = this.modalOpen.open(NodeModalComponent, {
+      fullscreen: 'lg',
+      size: 'xl',
+      centered: true,
+    });
+    modalRef.componentInstance.data = data;
+    modalRef.componentInstance.modalRef = modalRef;
+  }
+
+  showMaterialsDetails(data: string) {
+    const modalRef = this.modalOpen.open(MaterialsModalComponent, {
+      fullscreen: 'lg',
+      size: 'xl',
+      centered: true,
+    });
+    modalRef.componentInstance.data = data;
+    modalRef.componentInstance.modalRef = modalRef;
+  }
+
+  showSectionsDetails(data: string) {
+    const modalRef = this.modalOpen.open(SectionsModalComponent, {
+      fullscreen: 'lg',
+      size: 'xl',
+      centered: true,
+    });
+    modalRef.componentInstance.data = data;
+    modalRef.componentInstance.modalRef = modalRef;
+  }
+  
+  showElementsDetails(data: string) {
+    const modalRef = this.modalOpen.open(ElementsModalComponent, {
+      fullscreen: 'lg',
+      size: 'xl',
+      centered: true,
+    });
+    modalRef.componentInstance.data = data;
+    modalRef.componentInstance.modalRef = modalRef;
+  }
+
+  showSupportsDetails(data: string) {
+    const modalRef = this.modalOpen.open(SupportsModalComponent, {
+      fullscreen: 'lg',
+      size: 'xl',
+      centered: true,
+    });
+    modalRef.componentInstance.data = data;
+    modalRef.componentInstance.modalRef = modalRef;
+  }
+
+  showPointsLoadsDetails(data: string) {
+    const modalRef = this.modalOpen.open(PointLoadsModalComponent, {
+      fullscreen: 'lg',
+      size: 'xl',
+      centered: true,
+    });
+    modalRef.componentInstance.data = data;
+    modalRef.componentInstance.modalRef = modalRef;
+  }
+
   showDistLoadsDetails(data: string) {
     const modalRef = this.modalOpen.open(DistLoadsModalComponent, {
+      fullscreen: 'lg',
+      size: 'xl',
+      centered: true,
+    });
+    modalRef.componentInstance.data = data;
+    modalRef.componentInstance.modalRef = modalRef;
+  }
+
+  showResultsDetails(data: string) {
+    const modalRef = this.modalOpen.open(ResultsModalComponent, {
+      fullscreen: 'lg',
+      size: 'xl',
+      centered: true,
+    });
+    modalRef.componentInstance.data = data;
+    modalRef.componentInstance.modalRef = modalRef;
+  }
+
+  showSettingsDetails(data: string) {
+    const modalRef = this.modalOpen.open(SettingsModalComponent, {
       fullscreen: 'lg',
       size: 'xl',
       centered: true,

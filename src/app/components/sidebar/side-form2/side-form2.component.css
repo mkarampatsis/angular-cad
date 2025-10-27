@@ -4,3 +4,13 @@
   display: flex;
   flex-direction: column;
 }
+
+.list-group-item {
+  cursor: pointer;
+  user-select: none;
+  transition: background-color 0.2s;
+}
+
+.list-group-item:hover {
+  background-color: #f5f5f5;
+}
