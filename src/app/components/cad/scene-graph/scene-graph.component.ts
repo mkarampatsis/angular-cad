@@ -1,7 +1,7 @@
 import { Component, CUSTOM_ELEMENTS_SCHEMA, ChangeDetectionStrategy, ElementRef, viewChild } from '@angular/core';
 import { injectStore, extend, NgtArgs } from 'angular-three';
 import { OrbitControls } from 'three-stdlib';
-import { CubeComponent } from '../../shared/elements/cube/cube.component';
+import { CubeComponent } from '../../../shared/components/elements/cube/cube.component';
 
 extend({ OrbitControls }); // makes ngt-orbit-controls available
 

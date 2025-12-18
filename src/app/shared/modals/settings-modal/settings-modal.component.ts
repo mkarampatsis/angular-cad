@@ -7,5 +7,6 @@ import { Component } from '@angular/core';
   styleUrl: './settings-modal.component.css'
 })
 export class SettingsModalComponent {
-
+  modalRef: any;
+  data!: string;
 }

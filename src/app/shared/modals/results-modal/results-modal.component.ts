@@ -7,5 +7,6 @@ import { Component } from '@angular/core';
   styleUrl: './results-modal.component.css'
 })
 export class ResultsModalComponent {
-
+  modalRef: any;
+  data!: string;
 }

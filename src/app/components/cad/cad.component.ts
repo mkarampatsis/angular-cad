@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { SidebarComponent } from '../sidebar/sidebar.component';
-import { SceneGraphComponent } from '../scene-graph/scene-graph.component';
+import { SceneGraphComponent } from './scene-graph/scene-graph.component';
 import { NgtCanvas, extend } from 'angular-three';
 import * as THREE from 'three';
 

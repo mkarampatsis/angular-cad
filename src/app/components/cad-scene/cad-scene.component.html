@@ -1,0 +1,19 @@
+<ngt-canvas
+  [camera]="{ position: [0, 200, 400], fov: 60 }"
+  (created)="onSceneCreated($event)"
+>
+  <!-- Lights -->
+  <ngt-ambient-light [intensity]="0.8" />
+  <ngt-directional-light [position]="[100, 200, 100]" />
+
+  <!-- Grid -->
+  <ngt-grid-helper
+    *ngIf="showGrid"
+    [args]="[500, 50]"
+  />
+
+  <!-- DXF objects -->
+  <ng-container *ngFor="let obj of dxfObjects">
+    <ngt-primitive [object]="obj" />
+  </ng-container>
+</ngt-canvas>

@@ -7,5 +7,6 @@ import { Component } from '@angular/core';
   styleUrl: './point-loads-modal.component.css'
 })
 export class PointLoadsModalComponent {
-
+  modalRef: any;
+  data!: string;
 }
